@@ -1,0 +1,16 @@
+name: GitHub Pages
+on:
+  push:
+    branches:
+      - main # Set this to the name of your main branch
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build and Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          branch: gh-pages
+          folder: .
